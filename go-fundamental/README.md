@@ -1,10 +1,12 @@
 # Golang Basic Fundamental
 
 ## Reference :
-[Ref 1](https://www.w3schools.com/go/go_syntax.php)
-[Ref 2](https://www.tutorialspoint.com/go/go_basic_syntax.htm)
+
+- [Link 1](https://www.w3schools.com/go/go_syntax.php)
+- [Link 2](https://www.tutorialspoint.com/go/go_basic_syntax.htm)
 
 ## Module :
+
 - Go Syntax
 - Go Comments
 - Go Variables
