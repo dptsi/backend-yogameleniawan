@@ -46,3 +46,29 @@ func TestHelloWorldAssertion(t *testing.T) {
 	assert.Equal(t, "Hello Yoga Meleniawan Pamungkas", result, "The two words should be the same.")
 	fmt.Println("TestHelloWorldAssertion() done")
 }
+
+func TestHelloWorldTable(t *testing.T) {
+	tests := []struct {
+		name     string
+		request  string
+		expected string
+	}{
+		{
+			name:     "Yoga",
+			request:  "Yoga Meleniawan Pamungkas",
+			expected: "Hello Yoga Meleniawan Pamungkas",
+		},
+		{
+			name:     "Meleniawan",
+			request:  "Yoga Meleniawan Pamungkas",
+			expected: "Hello Yoga Meleniawan Pamungkas",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			result := HelloWorld(test.request)
+			assert.Equal(t, test.expected, result, "The two words should be the same.")
+		})
+	}
+}
