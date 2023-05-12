@@ -7,6 +7,12 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestMain(m *testing.M) {
+	fmt.Println("Start Testing Hello World")
+	m.Run()
+	fmt.Println("End Testing Hello World")
+}
+
 func TestHelloWorld(t *testing.T) {
 	result := HelloWorld("Yoga Meleniawan Pamungkas")
 	if result != "Hello Yoga Meleniawan Pamungkas" {
