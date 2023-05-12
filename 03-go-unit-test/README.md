@@ -14,3 +14,10 @@ go test -v
 ```bash
 go test -v -run=TestNamaFunction
 ```
+
+### Menggagalkan Unit Test
+
+- `t.Fail()` menggagalkan unit test namun akan melanjutkan eksekusi unit test selanjutnya. Namun diakhir ketika selesai, unit test tersebut dianggap gagal.
+- `t.FailNow()` menggagalkan unit test dan langsung menghentikan eksekusi unit test tanpa melanjutkan ke unit test berikutnya
+- `t.Error()` menggagalkan unit test dengan menuliskan log (print) error kemudian dilanjutkan dengan memanggil function `Fail()`.
+- `t.Fatal()` menggagalkan unit test dengan menuliskan log (print) error kemudian memanggil function `FailNow()` sehingga ekseksui unit test berhenti
