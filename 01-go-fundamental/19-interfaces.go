@@ -58,9 +58,36 @@ func getArea(shape Shape) float64 {
 	return shape.area()
 }
 
+type Bentuk interface {
+	luas() float64
+}
+
+type Persegi struct {
+	sisi float64
+}
+
+type Segitiga struct {
+	alas, tinggi float64
+}
+
+func (persegi Persegi) luas() float64 {
+	return persegi.sisi * persegi.sisi
+}
+
+func (segitiga Segitiga) luas() float64 {
+	return 0.5 * segitiga.alas * segitiga.tinggi
+}
+
+func getLuas(bentuk Bentuk) float64 {
+	return bentuk.luas()
+}
+
 func main() {
 	circle := Circle{x: 0, y: 0, radius: 5}
 	rectangle := Rectangle{width: 10, height: 5}
+	persegi := Persegi{sisi: 5}
+
+	fmt.Printf("Luas persegi: %f\n", getLuas(persegi))
 
 	fmt.Printf("Circle area: %f\n", getArea(circle))
 	fmt.Printf("Rectangle area: %f\n", getArea(rectangle))
