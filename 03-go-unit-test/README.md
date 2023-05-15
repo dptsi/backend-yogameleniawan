@@ -21,3 +21,22 @@ go test -v -run=TestNamaFunction
 - `t.FailNow()` menggagalkan unit test dan langsung menghentikan eksekusi unit test tanpa melanjutkan ke unit test berikutnya
 - `t.Error()` menggagalkan unit test dengan menuliskan log (print) error kemudian dilanjutkan dengan memanggil function `Fail()`.
 - `t.Fatal()` menggagalkan unit test dengan menuliskan log (print) error kemudian memanggil function `FailNow()` sehingga ekseksui unit test berhenti
+
+### Menjalankan Unit Test Benchmark
+
+- Untuk menjalankan unit test Benchmark dengan menampilkan function apa saja yang sudah di jalankan
+```bash
+go test -v -bench=.
+```
+- Untuk menjalankan unit test Benchmark tanpa unit test
+```bash
+go test -v -run=NotMathUnitTest -bench=.
+```
+- Untuk menjalankan unit test Benchmark tertentu
+```bash
+go test -v -run=NotMathUnitTest -bench=BenchmarkTest
+```
+- Untuk menjalankan bencmark di root module dan ingin semua module dijalankan
+```bash
+go test -v -bench=../..
+```
