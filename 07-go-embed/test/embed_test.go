@@ -1,4 +1,4 @@
-package go_embed
+package test
 
 import (
 	"embed"
