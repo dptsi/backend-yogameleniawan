@@ -72,9 +72,13 @@ func TestTemplateActionRange(t *testing.T) {
 }
 
 func TemplateActionWith(writer http.ResponseWriter, request *http.Request) {
-	t := template.Must(template.ParseFiles("./templates/with.gohtml"))
+	t := template.Must(template.ParseFiles(
+		"./templates/header.gohtml",
+		"./templates/footer.gohtml",
+		"./templates/layout.gohtml",
+	))
 
-	t.ExecuteTemplate(writer, "with.gohtml", map[string]interface{}{
+	t.ExecuteTemplate(writer, "layout", map[string]interface{}{
 		"Title": "Template Data WIth",
 		"Name":  "Yoga Meleniawan Pamungkas",
 		"Address": map[string]interface{}{
