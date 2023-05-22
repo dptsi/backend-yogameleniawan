@@ -1,4 +1,4 @@
-package belajar_golang_web
+package go_web
 
 import (
 	"bytes"
