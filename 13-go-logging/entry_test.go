@@ -1,8 +1,9 @@
 package belajar_golang_logging
 
 import (
-	"github.com/sirupsen/logrus"
 	"testing"
+
+	"github.com/sirupsen/logrus"
 )
 
 func TestEntry(t *testing.T) {
@@ -10,9 +11,9 @@ func TestEntry(t *testing.T) {
 	logger.SetFormatter(&logrus.JSONFormatter{})
 
 	logger.Info("Hello Logging")
-	logger.WithField("username", "eko").Info("Hello Logging")
+	logger.WithField("username", "yoga").Info("Hello Logging")
 
 	entry := logrus.NewEntry(logger)
-	entry.WithField("username", "khannedy")
+	entry.WithField("username", "meleniawan")
 	entry.Info("Hello Entry")
 }
